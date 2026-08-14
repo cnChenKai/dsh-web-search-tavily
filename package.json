@@ -1,6 +1,6 @@
 {
   "name": "dsh-web-search-tavily",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Tavily-backed WebSearchProvider for the DeepSeek Harness web seam (ctx.web) - keyless mode supported, no API key required",
   "keywords": [
     "deepseek-harness",
