@@ -1,0 +1,18 @@
+# dsh-web-search-tavily bundle patch.
+#
+# Mounts the Tavily search provider and selects it for the web seam's search.
+# Keyless mode works with NO key: the provider sends X-Tavily-Access-Mode: keyless.
+# A key in the credentials store (TAVILY_API_KEY) or $TAVILY_API_KEY in the
+# launching environment upgrades to the keyed tier automatically.
+# Never commit a key.
+
+- insert:
+    - id: web-search-tavily
+      name: 'dsh-web-search-tavily'
+      config:
+        apiKeyEnv: TAVILY_API_KEY
+
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: tavily
