@@ -1,6 +1,6 @@
 {
   "name": "dsh-web-search-tavily",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Tavily-backed WebSearchProvider for the DeepSeek Harness web seam (ctx.web) - keyless mode supported, no API key required",
   "keywords": [
     "deepseek-harness",
@@ -41,9 +41,15 @@
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-credentials": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-launch-environment": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-web": "^0.1.0-rc.6",
-    "@deepseek-ai/schemastery": "^1.0.0"
+    "@deepseek-ai/dsh-credentials": "^0.0.1-rc.1",
+    "@deepseek-ai/dsh-launch-environment": "^0.0.1-rc.3",
+    "@deepseek-ai/dsh-web": "^0.0.1-rc.1",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.7"
   }
 }
