@@ -1,5 +1,12 @@
 # dsh-web-search-tavily
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/dsh-web-search-tavily"><img src="https://img.shields.io/npm/v/dsh-web-search-tavily" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/dsh-web-search-tavily"><img src="https://img.shields.io/npm/dm/dsh-web-search-tavily" alt="npm downloads"></a>
+  <a href="https://github.com/cnChenKai/dsh-web-search-tavily"><img src="https://img.shields.io/github/stars/cnChenKai/dsh-web-search-tavily" alt="GitHub stars"></a>
+  <a href="https://github.com/cnChenKai/dsh-web-search-tavily/blob/main/LICENSE"><img src="https://img.shields.io/github/license/cnChenKai/dsh-web-search-tavily" alt="License"></a>
+</p>
+
 [English](README.md) | [中文](README.zh.md)
 
 A [Tavily](https://tavily.com)-backed search provider for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web capability seam (`ctx.web`): it makes the built-in `web_search` tool run on Tavily's search API instead of the shipped DeepSeek route.
