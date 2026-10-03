@@ -11,6 +11,8 @@
 
 A [Tavily](https://tavily.com)-backed search provider for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web capability seam (`ctx.web`): it makes the built-in `web_search` tool run on Tavily's search API instead of the shipped DeepSeek route.
 
+**DSH compatibility:** validated with `0.2.0-rc.2`.
+
 ## Features
 
 - **Keyless mode** - no API key needed at all: the provider sends the official `X-Tavily-Access-Mode: keyless` header when no key is configured. Responses are identical to keyed ones.

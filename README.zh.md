@@ -11,6 +11,8 @@
 
 基于 [Tavily](https://tavily.com) 的 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 搜索 Provider，让内置的 `web_search` 工具走 Tavily 搜索 API（`ctx.web` 能力接缝）。
 
+**DSH 兼容性：** 已按 `0.2.0-rc.2` 验证。
+
 ## 特性
 
 - **免密钥（keyless）**：无需任何 API key——未配置密钥时自动发送官方的 `X-Tavily-Access-Mode: keyless` 请求头，响应与带 key 完全一致。
