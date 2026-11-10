@@ -11,7 +11,7 @@
 
 基于 [Tavily](https://tavily.com) 的 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 搜索 Provider，让内置的 `web_search` 工具走 Tavily 搜索 API（`ctx.web` 能力接缝）。
 
-**DSH 兼容性：** 已按 `0.2.2-rc.1` 验证（Node.js 需为 24.9.0 或更高版本）。当前源码不一定已发布到 npm。
+**DSH 兼容性：** `0.2.5` 版已按 `0.2.2-rc.1` 验证（Node.js 需为 24.9.0 或更高版本）。
 
 ## 特性
 
@@ -21,14 +21,12 @@
 
 ## 安装
 
-无需发布即可安装当前源码。在仓库目录运行（需要时将 `web` 替换为目标 profile）：
+将 npm 包安装到目标 DSH profile（需要时将 `web` 替换为目标 profile）：
 
 ```sh
-npm pack
-dsh plugin --profile web add "$(pwd)/dsh-web-search-tavily-0.2.5.tgz"
+dsh plugin --profile web add dsh-web-search-tavily@0.2.5
 ```
 
-npm 上的包可能仍是旧版且不兼容；按包名安装前请检查已发布版本。
 
 Bundle 只注册 Provider，**不会**自动选择它，也不会更改现有 web 配置。DSH 自带的 web profile 选择的是 `deepseek-official`。如需使用 Tavily，先运行 `dsh --profile web --dump-config` 检查生效的 `web` 条目，然后编辑 `$DSH_HOME/profiles/web/cordis.patch.yml`（默认 `~/.dsh/profiles/web/cordis.patch.yml`）中已有的 `web` 条目；没有时再添加。补丁会**整体替换** `config`，不会合并：须保留所有原有 web 设置，仅改 `searchProvider`。例如，原 fetch provider 为 `http` 且没有其他 web 设置时：
 

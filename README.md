@@ -11,7 +11,7 @@
 
 A [Tavily](https://tavily.com)-backed search provider for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web capability seam (`ctx.web`): it makes the built-in `web_search` tool run on Tavily's search API instead of the shipped DeepSeek route.
 
-**DSH compatibility:** validated with `0.2.2-rc.1` (Node.js 24.9.0 or newer). This source checkout has not necessarily been published to npm.
+**DSH compatibility:** version `0.2.5` was validated with `0.2.2-rc.1` (Node.js 24.9.0 or newer).
 
 ## Features
 
@@ -21,14 +21,12 @@ A [Tavily](https://tavily.com)-backed search provider for the [DeepSeek Harness]
 
 ## Install
 
-To install this checkout without publishing it, run the following from the repository directory (replace `web` with the target profile if needed):
+Install the npm package into the target DSH profile (replace `web` if needed):
 
 ```sh
-npm pack
-dsh plugin --profile web add "$(pwd)/dsh-web-search-tavily-0.2.5.tgz"
+dsh plugin --profile web add dsh-web-search-tavily@0.2.5
 ```
 
-The registry package may still contain an older, incompatible release; check the published version before installing by package name.
 
 The bundle only registers the provider; it does **not** select it or change your existing web configuration. The shipped web profile selects `deepseek-official`. To use Tavily, first inspect the effective `web` entry with `dsh --profile web --dump-config`. Then edit the existing `web` entry in `$DSH_HOME/profiles/web/cordis.patch.yml` (default `~/.dsh/profiles/web/cordis.patch.yml`), or add one if none exists. A patch replaces the **entire** `config` rather than merging it: carry over every existing web setting, changing only `searchProvider`. For example, if your existing fetch provider is `http` and there are no other web settings:
 
